@@ -15,13 +15,13 @@ DOCKER_PATH="/srv/docker"
 DOCKER_RESTART="0"
 
 # Mailvars
-SMTPSERVER="mail.lyrah.net"
+SMTPSERVER="mail.local"
 SMTPPORT="587"
-SMTPUSER="networkmailer@lyrah.net"
+SMTPUSER="sender@mail.local"
 SMTPPASS='xxxxxxxxxxxxxxx'
-FROMNAME="Networkmailer"
-MAILFROM="networkmailer@lyrah.net"
-MAILTO=(m.janssen@lyrah.net c.fokuhl@lyrah.net)
+FROMNAME="sender"
+MAILFROM="sender@mail.local"
+MAILTO=(mail1@mail.local mail2@mail.local)
 SUBJECT="Systemupdate performed! System rebooted! - $(/usr/bin/hostname -f)!"
 MESSAGE="Systemupdate has been completed! Autoreboot has been performed!! $(date "+%d.%b.%Y - %H:%M:%S %Z"). Log append."
 
