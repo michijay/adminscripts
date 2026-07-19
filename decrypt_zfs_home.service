@@ -1,0 +1,16 @@
+[Unit]
+Description=Import key for ZFS pool
+DefaultDependencies=no
+After=systemd-udev-settle.service
+After=zfs-import.target
+After=systemd-remount-fs.service
+Before=zfs-mount.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+#ExecStart=/bin/bash -c 'systemd-ask-password "Enter password for encrypted ZFS-Homedrive :" --no-tty | zfs load-key -a'
+ExecStart=/bin/bash -c /opt/decrypt_zfs_home.sh
+
+[Install]
+WantedBy=zfs.target
