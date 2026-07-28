@@ -4,7 +4,7 @@
 # Author: Michael Janssen <m.janssen@lyrah.net>
 # License: GPLv3 (See README.md for details)
 
-VERSION="1.3-1"
+VERSION="1.3-2"
 
 TMPFILE="/tmp/sysupdater.log"
 NOTIFYMODE="POPUP"
@@ -85,12 +85,9 @@ sleep 2
 			fi
 			echo "$0 : $(date '+%d.%b.%Y - %H:%M:%S %Z') - Pulling complete!"
 		done
-		if [ "$UPDATED" -eq 1 ]
-		then
-			echo "$0 : $(date '+%d.%b.%Y - %H:%M:%S %Z') - Cleaning up unused Docker images and build cache..."
-			docker image prune -af
-			docker builder prune -f
-		fi
+		echo "$0 : $(date '+%d.%b.%Y - %H:%M:%S %Z') - Cleaning up unused Docker images and build cache..."
+		docker image prune -af
+		docker builder prune -f
 	fi
 
 	if [[ $NOTIFYMODE == "MAIL" ]]
