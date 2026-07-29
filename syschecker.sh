@@ -4,8 +4,6 @@
 # Author: Michael Janssen <m.janssen@lyrah.net>
 # License: GPLv3 (See README.md for details)
 
-VERSION="1.1-0"
-
 AIDE_SCAN="YES"
 ROOTKIT_SCAN="NO"
 AV_SCAN="YES"

@@ -1,0 +1,14 @@
+# adminscipt version
+VERSION="1.4-2"
+
+# set empty if not needed
+DOCKER_PATH="/srv/docker"
+
+# mailconfig for notification
+SMTPSERVER="mail.local"
+SMTPPORT="587"
+SMTPUSER="sender@mail.local"
+SMTPPASS='xxxxxxxxxxxxxxx'
+FROMNAME="sender"
+MAILFROM="sender@mail.local"
+MAILTO=(mail1@mail.local mail2@mail.local)
