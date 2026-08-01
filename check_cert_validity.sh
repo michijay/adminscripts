@@ -7,6 +7,9 @@
 # search for external config and load it
 { source ./adminscripts.cfg || source /etc/adminscripts.cfg || source /usr/local/etc/adminscripts.cfg ; } 2>/dev/null || echo "Warning: No config file found!"
 
+# load version.nfo
+{ source ./version.nfo ; } 2>/dev/null || echo "Warning: Version file not found!"
+
 # Domainname
 DOMAIN="xxx.com"
 

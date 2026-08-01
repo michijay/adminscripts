@@ -1,6 +1,3 @@
-# adminscipt version
-VERSION="1.4-2"
-
 # set empty if not needed
 DOCKER_PATH="/srv/docker"
 
@@ -12,3 +9,13 @@ SMTPPASS='xxxxxxxxxxxxxxx'
 FROMNAME="sender"
 MAILFROM="sender@mail.local"
 MAILTO=(mail1@mail.local mail2@mail.local)
+
+# config for syschecker
+AIDE_SCAN="YES"
+ROOTKIT_SCAN="NO"
+AV_SCAN="YES"
+
+# config for sysupdater
+NOTIFYMODE="POPUP"
+AUTOREBOOT="NO"
+UPDATEMOTD="NO"

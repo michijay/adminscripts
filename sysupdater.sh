@@ -7,10 +7,10 @@
 # search for external config and load it
 { source ./adminscripts.cfg || source /etc/adminscripts.cfg || source /usr/local/etc/adminscripts.cfg ; } 2>/dev/null || echo "Warning: No config file found!"
 
+# load version.nfo
+{ source ./version.nfo ; } 2>/dev/null || echo "Warning: Version file not found!"
+
 TMPFILE="/tmp/sysupdater.log"
-NOTIFYMODE="POPUP"
-AUTOREBOOT="NO"
-UPDATEMOTD="NO"
 
 SUBJECT="Systemupdate performed! System rebooted! - $(/usr/bin/hostname -f)!"
 MESSAGE="Systemupdate has been completed! Autoreboot has been performed!! $(date "+%d.%b.%Y - %H:%M:%S %Z"). Log append."

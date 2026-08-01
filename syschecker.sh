@@ -4,9 +4,11 @@
 # Author: Michael Janssen <m.janssen@lyrah.net>
 # License: GPLv3 (See README.md for details)
 
-AIDE_SCAN="YES"
-ROOTKIT_SCAN="NO"
-AV_SCAN="YES"
+# search for external config and load it
+{ source ./adminscripts.cfg || source /etc/adminscripts.cfg || source /usr/local/etc/adminscripts.cfg ; } 2>/dev/null || echo "Warning: No config file found!"
+
+# load version.nfo
+{ source ./version.nfo ; } 2>/dev/null || echo "Warning: Version file not found!"
 
 SCANDIRS=( $(find / -maxdepth 1 -type d | grep -v -E "sys|dev|run|proc|lost\+found|media|mnt|home") )
 TMPFILE="/tmp/syschecker.log"
