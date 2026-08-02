@@ -15,7 +15,7 @@ SUBJECT="SSL Certificate renewed for $DOMAIN !"
 MESSAGE="Certificate renewed, check SSL connection."
 CHARSET="utf-8"
 
-CERTFILE=$(grep "SSLCertificateFile" $SSLCONFFILE | sed 's/^[[:space:]]*//')
+CERTFILE=$(grep "SSLCertificateFile" $SSLCONFFILE | sed 's/^[[:space:]]*//' | cut -d" " -f2)
 VALIDITY=$(openssl x509 -enddate -noout -in $CERTFILE | cut -d"=" -f2)
 DATECURRENT=$(/usr/bin/date "+%b %d %H:%M:%S %Y %Z")
 DATE_ACTUALLY_SECONDS=$(date +"%s")
