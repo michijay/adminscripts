@@ -8,19 +8,12 @@
 { source ./adminscripts.cfg || source /etc/adminscripts.cfg || source /usr/local/etc/adminscripts.cfg ; } 2>/dev/null || echo "Warning: No config file found!"
 
 # load version.nfo
-{ source ./version.nfo ; } 2>/dev/null || echo "Warning: Version file not found!"
-
-# Domainname
-DOMAIN="xxx.com"
+{ source ./version.nfo || source /opt/adminscripts/version.nfo ; } 2>/dev/null || echo "Warning: Version file not found!"
 
 # Data for notification email
 SUBJECT="SSL Certificate renewed for $DOMAIN !"
 MESSAGE="Certificate renewed, check SSL connection."
 CHARSET="utf-8"
-
-# Certificate data
-SSLCONFFILE="/etc/apache2/sites-enabled/port443.conf"
-DAYS_TO_RENEW="10"
 
 CERTFILE=$(grep "SSLCertificateFile" $SSLCONFFILE | cut -d" " -f2)
 VALIDITY=$(openssl x509 -enddate -noout -in $CERTFILE | cut -d"=" -f2)

@@ -19,3 +19,10 @@ AV_SCAN="YES"
 NOTIFYMODE="POPUP"
 AUTOREBOOT="NO"
 UPDATEMOTD="NO"
+
+# config for check_cert_validity
+# Domainname
+DOMAIN="xxx.com"
+# Certificate data
+SSLCONFFILE="/etc/apache2/sites-enabled/port443.conf"
+DAYS_TO_RENEW="10"
